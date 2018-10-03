@@ -1,9 +1,10 @@
-import App, { Container } from 'next/app'
-import React from 'react'
+import App, { Container } from 'next/app';
+import Head from 'next/head';
+import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { Provider } from 'react-redux'
-import withRedux from 'next-redux-wrapper'
-import withReduxSaga from 'next-redux-saga'
+import { Provider } from 'react-redux';
+import withRedux from 'next-redux-wrapper';
+import withReduxSaga from 'next-redux-saga';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import JssProvider from 'react-jss/lib/JssProvider';
 
@@ -41,6 +42,9 @@ class MyApp extends App {
     const { Component, pageProps, store } = this.props
     return (
       <Container>
+        <Head>
+          <title>My new cool app</title>
+        </Head>
         <Provider store={store}>
           <JssProvider
             registry={this.pageContext.sheetsRegistry}

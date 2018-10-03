@@ -8,7 +8,6 @@ import api from './api';
 function* loadDataSaga() {
     try {
         const data = yield api.getUserData();
-        console.log(data);
         yield put(loadDataSuccess(data))
     } catch (err) {
         yield put(loadDataFailure(err))
